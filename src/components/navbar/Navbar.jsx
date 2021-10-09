@@ -3,6 +3,7 @@ import styles from './navbar.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 import mario from '../../static/images/mario.png'
+import { Link } from 'react-router-dom'
 
 export default function Navbar(){
 
@@ -15,8 +16,10 @@ export default function Navbar(){
     return(<div>
         <div className={styles.navbar__user}>
             <div className={styles.logoContainer}>
-                <img className={styles.logoGG} src={mario} alt="" />
-                <span style={{fontSize:'20px', marginLeft:'5px'}}>GGAMES</span>
+                <Link to ={'/'}>
+                    <img className={styles.logoGG} src={mario} alt="" />
+                    <span style={{fontSize:'20px', marginLeft:'5px'}}>GGAMES</span>
+                </Link>
             </div>
             <div className={styles.searchBar}>
                 <input onChange={handleChange} className={styles.navbar__search} placeholder='¿QUE ESTÁS BUSCANDO? ESCRÍBELO AQUÍ...' type="text" value={search} />

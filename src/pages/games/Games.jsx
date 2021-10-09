@@ -3,10 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { connect } from "react-redux";
+import { useParams } from "react-router";
 import { getGames } from "../../actions/actions";
 import Card from "../../components/card/Card";
+import styles from './games.module.css'
 
 function Games({state, getGames}){
+
+    const {option} = useParams();
+    console.log(option)
 
     const [games, setGames] = useState(false)
 
@@ -17,15 +22,15 @@ function Games({state, getGames}){
 
     return(<div>
 
-<div>
+    <div className={styles.cardsContainer}>
 
-{
-    !games? <h1>prueba</h1>:
-    state.results && state.results.map(item=><Card item={item}/>)
-    
-}
+    {
+        !games? <h1>prueba</h1>:
+        state.results && state.results.map(item=><Card item={item}/>)
+        
+    }
 
-</div>
+    </div>
         <ReactPaginate
         previousLabel={<FontAwesomeIcon icon={faChevronLeft}/>}
         nextLabel={<FontAwesomeIcon icon={faChevronRight}/>}
