@@ -1,0 +1,16 @@
+.slider{
+    width: 75%;
+    height: 500px;
+    text-align: right;
+}
+
+.slide{
+    max-height: 400px;
+}
+
+.text{
+    background-color: aqua;
+    padding: 10px 20px;
+    margin: 12px 0px;
+    text-transform: capitalize;
+}

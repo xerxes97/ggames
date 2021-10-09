@@ -1,0 +1,22 @@
+.categories{
+    width: 20%;
+}
+
+.list{
+    padding: 13px 0px;
+    list-style: none;
+    background-color: aqua;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.item, .itemSelect{
+    cursor: pointer;
+    padding: 3px 0px;
+    padding-left: 15px;
+    transition: all 0.3s linear;
+}
+
+.item:hover, .itemSelect:hover{
+    background-color: tomato;
+}
