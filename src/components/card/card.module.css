@@ -1,8 +1,42 @@
 .card{
-    width: 23%;
-    min-width: 280px;
+    width: 22%;
+    min-width: 250px;
+    border: 1px solid #8f9b8a;
+    border-radius: 5px;
+    height: 260px;
+    margin-bottom: 25px;    
+    cursor: pointer;
+    transition: 0.3s all;
+    overflow: hidden;
+}
+
+.connect{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.card__infoHeader{
+    width: 90%;
+    margin: 0 auto;
+    text-overflow: ellipsis;
+}
+
+.title{
+    font-size: 15px;
+    padding: 0px;    
+}
+
+.icon{
+    color: rgb(212, 175, 55);
 }
 
 img{
     width: 100%;
 }
+
+.card:hover{
+    box-shadow: #686e6b 2px 3px 20px 1px;
+    transform: scale(1.1);
+}
+

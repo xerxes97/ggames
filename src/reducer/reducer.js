@@ -1,4 +1,4 @@
-import { GET_GAMES, GET_CATEGORIES, GET_CARROUSEL } from "../actions/actions";
+import { GET_GAMES, GET_CATEGORIES, GET_CARROUSEL, GET_GENRE_INFO, GET_GAME_INFO } from "../actions/actions";
 
 const initialState={
     games: [],
@@ -6,7 +6,8 @@ const initialState={
     categories: [],
     favorites: [],
     gamesSearch:[],
-    carrousel:[]
+    carrousel:[],
+    infoGenre:[]
 }
 
 function rootReducer(state = initialState, action){
@@ -32,6 +33,20 @@ function rootReducer(state = initialState, action){
             return{
                 ...state,
                 carrousel: filter
+            }
+        }
+
+        case GET_GENRE_INFO:{
+            return{
+                ...state,
+                infoGenre: action.payload.data
+            }
+        }
+
+        case GET_GAME_INFO:{
+            return{
+                ...state,
+                gameDetails: action.payload.data
             }
         }
         

@@ -12,6 +12,7 @@ import poster1 from '../../static/images/aogIV.jpg'
 import poster2 from '../../static/images/out.jpg'
 import poster3 from '../../static/images/prueba.jpg'
 import poster4 from '../../static/images/RE.jpg'
+import {url_embed} from '../../static/videos/videoGallery'
 
 
 function CardsContainer({state, getGames}){
@@ -29,7 +30,7 @@ function CardsContainer({state, getGames}){
         </div>
         <div className={styles.gallery}>
             <div>
-                <span>Best Sellers</span>
+                <span className={styles.sellers}>VIDEOS - TRAILERS</span>
             </div>
             <div className={styles.videoGallery}>
                 <div className={styles.video}>
@@ -44,6 +45,12 @@ function CardsContainer({state, getGames}){
                 <div className={styles.video}>
                     <video controls loop src={RE} poster={poster4} muted></video>
                 </div>
+                {/* <div>
+                    <iframe width="100%" height="180" src={`https://www.youtube.com/embed/${url_embed[0]}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div> */}
+                {
+                    url_embed.map(url=><div className={styles.video} key={url}><iframe src={`https://www.youtube.com/embed/${url}`} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe></div>)
+                }
             </div>
         </div>
 

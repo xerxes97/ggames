@@ -9,8 +9,9 @@
 }
 
 .text{
-    background-color: aqua;
+    background-color: #516169;
     padding: 10px 20px;
     margin: 12px 0px;
     text-transform: capitalize;
+    border-radius: 3px;
 }

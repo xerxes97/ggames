@@ -4,31 +4,34 @@ import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { connect } from "react-redux";
 import { useParams } from "react-router";
-import { getGames } from "../../actions/actions";
+import { getGames, getGenreDeatils } from "../../actions/actions";
 import Card from "../../components/card/Card";
 import styles from './games.module.css'
 
-function Games({state, getGames}){
+function Games({state, genreInfo, getGames, getGenreDeatils}){
 
     const {option} = useParams();
-    console.log(option)
+    console.log(genreInfo)
 
     const [games, setGames] = useState(false)
 
     useEffect(()=>{
-        getGames();
+        getGames('',8,option,'');
+        getGenreDeatils(option);
         setGames(true)
-    },[getGames])
+    },[option])
 
-    return(<div>
+    return(<div  className={styles.pag}>
 
-    <div className={styles.cardsContainer}>
 
+    <div className={styles.games}>
+        <h1>{option}</h1>
+        <div className={styles.cardsContainer}>
     {
         !games? <h1>prueba</h1>:
-        state.results && state.results.map(item=><Card item={item}/>)
-        
+        state.results && state.results.map(item=><Card key={item.id} item={item}/>)
     }
+        </div>
 
     </div>
         <ReactPaginate
@@ -43,8 +46,9 @@ function Games({state, getGames}){
 
 function mapStateToProps(state){
     return{
-        state: state.games
+        state: state.games,
+        genreInfo: state.infoGenre
     }
 }
 
-export default connect(mapStateToProps, {getGames})(Games)
+export default connect(mapStateToProps, {getGames, getGenreDeatils})(Games)

@@ -5,18 +5,28 @@
 .list{
     padding: 13px 0px;
     list-style: none;
-    background-color: aqua;
+    background-color: #516169;
     border-radius: 5px;
     margin: 10px 0;
 }
 
+.list >a{
+    text-decoration: none;
+    color: blanchedalmond;
+}
+
 .item, .itemSelect{
     cursor: pointer;
-    padding: 3px 0px;
-    padding-left: 15px;
+    padding: 7px 15px;
     transition: all 0.3s linear;
 }
 
 .item:hover, .itemSelect:hover{
     background-color: tomato;
+    padding-left: 25px;
+}
+
+.itemTitle{
+    padding: 3px 0px 0px 15px;
+    text-transform: uppercase;
 }

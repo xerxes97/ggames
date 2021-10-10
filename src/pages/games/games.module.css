@@ -1,7 +1,14 @@
+.games{
+    width: 90%;
+    margin: 90px auto 0px;
+}
+
+.pag{
+    color: black;
+}
+
 .cardsContainer{
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
-    margin: 0 auto;
     justify-content: space-around;
 }

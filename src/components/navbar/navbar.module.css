@@ -1,12 +1,16 @@
-.navbar{
-    display: flex;
-    flex-direction: column;
-}
-
 .navbar__user{
     display: flex;
     align-items: center;
     text-align: center;
+    padding: 10px 0px;    
+    width: 100%;
+    background-color: #516169;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+
+    /* position: fixed;
+    width: 100%; */
 }
 
 .list{
@@ -16,17 +20,18 @@
 
 .searchBar{
     width: 40%;
-    border: 1px solid black;
+    border: 1px solid #ffffff;
     border-radius: 3px;
     padding: 3px 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #ffffff;
 }
 
 .icon{
-    background-color: black;
-    color: white;
+    background-color: #ffffff;
+    color: black;
     border-radius: 3px;
     font-size: 20px;
     margin-right: 3px;
@@ -39,7 +44,8 @@
     outline: none;
     background-color: transparent;
     width: 90%;
-    padding: 5px 0px;
+    padding: 5px 5px;
+    color: black;
 }
 
 .item{
@@ -54,6 +60,16 @@
 .logoContainer{
     display: flex;
     width: 15%;
-    align-items: center;
     justify-content: center;
+    min-width: 130px;
+}
+
+.logoContainer >a{
+    text-decoration: none;
+    color: #0071ea;
+}
+
+.logo__home{
+    display: flex;
+    align-items: center;
 }
